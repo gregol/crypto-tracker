@@ -26,11 +26,10 @@ function CoinsScreen(props) {
     setCouins(coinsData);
     setLoading(false);
   };
-  const handlePress = (id) => {
-    console.log('Coins ID', id);
-    props.navigation.navigate('CoinsDetail');
+  const handlePress = (coin) => {
+    props.navigation.navigate('CoinsDetail', {coin});
   };
-  
+
   if (loading) {
     return <ActivityIndicator color="#23465B" size="large" />;
   }
@@ -40,7 +39,7 @@ function CoinsScreen(props) {
       <FlatList
         data={coins.data}
         renderItem={({item}) => (
-          <CoinItem item={item} onPress={() => handlePress(item.id)} />
+          <CoinItem item={item} onPress={() => handlePress(item)} />
         )}
       />
     </View>

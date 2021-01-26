@@ -5,4 +5,6 @@ export const colors = {
   white: '#fff',
   textTitles: '#00C53B',
   textSubTitles: '#38B2AC',
+  purple: '#C792EA',
+  yellow: '#FFFF00'
 };
